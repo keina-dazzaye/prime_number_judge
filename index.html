@@ -1,0 +1,58 @@
+<html>
+  <head>
+    <script src="main.js"></script>
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+  </head>
+  <body>
+    <main>
+      <div align="center">
+        <h1>素数判定チェッカー</h1>
+        <h2>（素数爆弾）</h2>
+        <p>【説明】</p>
+        <ul class="list">
+          <li>入力された数字が素数かどうかを判定します！</li>
+          <li>checkするボタンを押したら判定と履歴が残るよ！</li>
+          <li>文字を入れたり空文字だとエラーが出るよ！</li>
+          <li>半角数字で入力してね！</li>
+        </ul>
+        <div>
+          <input
+            type="text"
+            pattern="^[0-9]+$"
+            name="inputArea"
+            id="textarea"
+            placeholder="ここに半角数字で入力してね！"
+          />
+          <button onclick="validate()" class="button">checkする</button>
+          <p>爆発回数（素数を当てた回数）</p>
+          <p id="bomberCount">0回</p>
+
+          <div class="bomberCountButtons">
+            <button id="increment" onclick="incriment()" class="button">
+              爆発！
+            </button>
+            <button id="reduce" onclick="reduce()" class="button">
+              カウントを減らす
+            </button>
+            <button id="reset" onclick="reset()" class="button danger">
+              カウントを初期化
+            </button>
+          </div>
+
+          　　　　　
+          <div>
+            <button
+              id="textareaDelete"
+              onclick="textareaDelete()"
+              class="button danger"
+            >
+              履歴をリセットする
+            </button>
+          </div>
+        </div>
+        <div id="output"></div>
+      </div>
+    </main>
+  </body>
+</html>

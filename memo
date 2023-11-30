@@ -1,0 +1,20 @@
+//isPrimeのときにカウンターの処理を自動で行えるようにしたい
+
+let count = 0;
+let firstBomberCount = document.getElementById("bomberCount");
+
+if (!isPrime) {
+  newElement.innerHTML = `これは素数ではありません→${text}`;
+} else if (isPrime) {
+  primeCount++;
+  count++;
+  firstBomberCount.innerHTML = `${count}回`;
+  newElement.innerHTML = `これは${primeCount}回目の素数です→${text}`;
+}
+document.getElementById("output").prepend(newElement);
+
+// カウンターの処理
+
+//function incriment()
+{
+}
