@@ -1,6 +1,7 @@
 let primeCount = 0;
 let count = 0;
 let divisionNum = 5;
+let checkDivisionNum = 5;
 function validate() {
   let isPrime = true;
 
@@ -35,8 +36,8 @@ function validate() {
     isPrime = false;
     divisionNum = 3;
   } else {
-    for (let i = 5; i * i <= text; i += 6) {
-      if (text % i === 0 || text % (i + 2) === 0) {
+    for (let i = 5; Math.sqrt(i) <= text; i += 6) {
+      if (text % i === 0) {
         isPrime = false;
         divisionNum = i;
         break;
