@@ -46,6 +46,9 @@ function validate() {
         isPrime = false;
         divisionNum = i + 2;
         break;
+      } else {
+        isPrime = true;
+        break;
       }
     }
   }
