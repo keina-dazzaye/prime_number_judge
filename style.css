@@ -26,3 +26,7 @@ input {
   margin: auto;
   text-align: left;
 }
+
+p {
+  font-weight: bold;
+}
