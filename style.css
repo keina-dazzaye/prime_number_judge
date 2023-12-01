@@ -1,7 +1,7 @@
 .button {
   appearance: none;
   border: 0;
-  border-radius: 5px;
+  border-radius: 10px;
   background: #4676d7;
   color: #fff;
   padding: 8px 16px;
@@ -10,6 +10,11 @@
 
 .danger {
   background-color: rgb(238 62 62);
+  margin: 10;
+}
+
+.button:active {
+  background: rgb(192, 191, 191);
 }
 
 input {
