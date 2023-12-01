@@ -100,17 +100,3 @@ function textareaDelete() {
     document.getElementById("textarea").value = "";
   }
 }
-
-// //textという変数がテキストとして表示される。また`と$の間に●という文字列を追加
-
-////textという変数がテキストとして表示される。また`と$の間に●という文字列を追加
-
-//document.getElementById("output").textContent = `${inputTextarea}`;
-
-//document.getElementById("textarea").onclick = function (event) {
-// let inputTextarea = document.getElementById("textarea").inputArea.value;
-// document.getElementById("output").textContent = `${inputTextarea}`;
-//};
-
-//isPrimeがtrueのとき、bomberCountも連動させたい
-//bomberCountは1づつ減らせるようにした
