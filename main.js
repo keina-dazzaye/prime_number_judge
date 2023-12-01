@@ -11,6 +11,9 @@ function validate() {
   } else if (text < 0) {
     alert("マイナスになる数字は入れないでね！");
     return;
+  } else if (Number.isInteger(Number(text)) === false) {
+    alert("小数は判定できないよ！");
+    return;
   }
 
   //ここに計算処理を入れる
