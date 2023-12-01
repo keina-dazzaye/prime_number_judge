@@ -1,6 +1,6 @@
 let primeCount = 0;
 let count = 0;
-
+let divisionNum = 5;
 function validate() {
   let isPrime = true;
 
@@ -19,41 +19,42 @@ function validate() {
   //ここに計算処理を入れる
 
   // console.log(typeof text);
-  let divisionNum = 2;
+
   const newElement = document.createElement("p"); //pタグを作成
-  if (Number(text) === 1) {
+  if (Number(text) <= 1) {
     alert("2以上の数字を入れてね！");
     return;
   }
 
-  if (text % 2 === 0) {
-    // textを2で割ったときあまりが0になったら素数ではないのでfalseを出す
+  if (text <= 3) {
+    isPrime = true;
+  } else if (text % 2 === 0) {
     isPrime = false;
+    divisionNum = 2;
+  } else if (text % 3 === 0) {
+    isPrime = false;
+    divisionNum = 3;
   } else {
-    for (let i = 2; i < text; i++) {
-      //   if (i + 1 === Number(text)) {
-      //     //　i+1がtextと同じになったときにtrueを出してループを終了する
-      //     isPrime = true;
-      //     break;
-      //   }
-      if (text % i === 0) {
-        // textが割り切れたときにfalseを出してループを終了する
+    for (let i = 5; i * i <= text; i += 6) {
+      if (text % i === 0 || text % (i + 2) === 0) {
         isPrime = false;
-        divisionNum = i; //割り切れた数を入れる
+        divisionNum = i;
+        break;
+      }
+      if (text % (i + 2) === 0) {
+        isPrime = false;
+        divisionNum = i + 2;
         break;
       }
     }
-
-    if (text === 1) {
-    }
   }
+
   if (!isPrime) {
     newElement.innerHTML = `これは素数ではありません→${text}　${divisionNum}で割り切れます`;
-  } else if (isPrime) {
+  } else {
     primeCount++;
     newElement.innerHTML = `これは${primeCount}回目の素数です→${text}`;
   }
-
   document.getElementById("output").prepend(newElement);
   divisionNum = undefined;
 }
