@@ -56,8 +56,9 @@ function incriment() {
 //カウントを減らす処理
 function reduce() {
   const firstBomberCount = document.getElementById("bomberCount");
-
-  count--;
+  if (count > 0) {
+    count--;
+  }
   firstBomberCount.innerHTML = `${count}回`;
 }
 
