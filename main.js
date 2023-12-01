@@ -1,6 +1,6 @@
 let primeCount = 0;
 let count = 0;
-let divisionNum = 2;
+
 function validate() {
   let isPrime = true;
 
@@ -13,7 +13,7 @@ function validate() {
   //ここに計算処理を入れる
 
   // console.log(typeof text);
-
+  let divisionNum = 2;
   const newElement = document.createElement("p"); //pタグを作成
   if (text % 2 === 0) {
     // textを2で割ったときあまりが0になったら素数ではないのでfalseを出す
@@ -34,13 +34,14 @@ function validate() {
     }
   }
   if (!isPrime) {
-    newElement.innerHTML = `これは素数ではありません→${text} 少なくとも${divisionNum}で割り切れます`;
+    newElement.innerHTML = `これは素数ではありません→${text}　${divisionNum}で割り切れます`;
   } else if (isPrime) {
     primeCount++;
     newElement.innerHTML = `これは${primeCount}回目の素数です→${text}`;
   }
 
   document.getElementById("output").prepend(newElement);
+  divisionNum = undefined;
 }
 
 // カウンターの処理 ここをisPrimeのときにincriment()を使わず勝手にcount++で値を更新できるようにしたい
