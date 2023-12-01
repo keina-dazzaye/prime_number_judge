@@ -1,6 +1,6 @@
 let primeCount = 0;
 let count = 0;
-
+let divisionNum = 2;
 function validate() {
   let isPrime = true;
 
@@ -28,12 +28,13 @@ function validate() {
       if (text % i === 0) {
         // textが割り切れたときにfalseを出してループを終了する
         isPrime = false;
+        divisionNum = i; //割り切れた数を入れる
         break;
       }
     }
   }
   if (!isPrime) {
-    newElement.innerHTML = `これは素数ではありません→${text}`;
+    newElement.innerHTML = `これは素数ではありません→${text} 少なくとも${divisionNum}で割り切れます`;
   } else if (isPrime) {
     primeCount++;
     newElement.innerHTML = `これは${primeCount}回目の素数です→${text}`;
