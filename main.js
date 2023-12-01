@@ -8,6 +8,9 @@ function validate() {
   if (isNaN(text) || !text) {
     alert("半角数字を入れてね！");
     return;
+  } else if (text < 0) {
+    alert("マイナスになる数字は入れないでね！");
+    return;
   }
 
   //ここに計算処理を入れる
@@ -15,6 +18,11 @@ function validate() {
   // console.log(typeof text);
   let divisionNum = 2;
   const newElement = document.createElement("p"); //pタグを作成
+  if (Number(text) === 1) {
+    alert("2以上の数字を入れてね！");
+    return;
+  }
+
   if (text % 2 === 0) {
     // textを2で割ったときあまりが0になったら素数ではないのでfalseを出す
     isPrime = false;
@@ -31,6 +39,9 @@ function validate() {
         divisionNum = i; //割り切れた数を入れる
         break;
       }
+    }
+
+    if (text === 1) {
     }
   }
   if (!isPrime) {
