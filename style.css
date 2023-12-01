@@ -23,10 +23,13 @@ input {
 }
 .list {
   width: fit-content;
-  margin: auto;
+  margin-bottom: 20;
   text-align: left;
 }
 
+.textarea {
+  margin-top: 10;
+}
 p {
   font-weight: bold;
 }
